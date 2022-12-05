@@ -26,13 +26,13 @@ import BasicLayout from "../../../layouts/authentication/components/BasicLayout"
 import CoverLayout from "../../../layouts/authentication/components/CoverLayout";
 // Images
 import bgImage from "../../../assets/images/bg-sign-in-basic.jpeg";
-
+import mobishulibg from "../../../assets/images/mobishulibg.png";
 function Basic() {
   const [rememberMe, setRememberMe] = useState(false);
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
 
   return (
-    <BasicLayout >
+    <CoverLayout  >
       <Card>
         <MDBox
           variant="gradient"
@@ -111,7 +111,7 @@ function Basic() {
           </MDBox>
         </MDBox>
       </Card>
-    </BasicLayout>
+    </CoverLayout>
   );
 }
 

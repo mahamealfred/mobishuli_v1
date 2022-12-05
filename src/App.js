@@ -2,9 +2,58 @@ import React from 'react';
 import SignIn from './layouts/authentication/sign-in';
 import theme from "./assets/theme";
 import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Icon from "@mui/material/Icon";
+import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "./context";
+import { useState, useEffect, useMemo } from "react";
+
+// react-router components
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+// Material Dashboard 2 React components
+import MDBox from "./components/MDBox"
 function App() {
+  const [controller, dispatch] = useMaterialUIController();
+  const {
+    miniSidenav,
+    direction,
+    layout,
+    openConfigurator,
+    sidenavColor,
+    transparentSidenav,
+    whiteSidenav,
+    darkMode,
+  } = controller;
+  const [onMouseEnter, setOnMouseEnter] = useState(false);
+  const [rtlCache, setRtlCache] = useState(null);
+  const { pathname } = useLocation();
+    // Change the openConfigurator state
+    const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
+  const configsButton = (
+    <MDBox
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      width="3.25rem"
+      height="3.25rem"
+      bgColor="white"
+      shadow="sm"
+      borderRadius="50%"
+      position="fixed"
+      right="2rem"
+      bottom="2rem"
+      zIndex={99}
+      color="dark"
+      sx={{ cursor: "pointer" }}
+      onClick={handleConfiguratorOpen}
+    >
+      <Icon fontSize="small" color="inherit">
+        settings
+      </Icon>
+    </MDBox>
+  );
     return (
       <ThemeProvider theme={theme}>
+         <CssBaseline />
       <SignIn/>
       </ThemeProvider>
 

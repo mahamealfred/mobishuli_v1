@@ -26,7 +26,8 @@ import breakpoints from "../../../assets/theme/base/breakpoints";
 
 // Material Dashboard 2 React context
 import { useMaterialUIController } from "../../../context";
-import Logo from "../../../assets/images/logos/mobishulilogo.png";
+import logo from "../../../assets/images/logos/mobishulilogo.png";
+import Box from  "@mui/material/Box";
 function DefaultNavbar({ transparent, light, action }) {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
@@ -96,7 +97,15 @@ function DefaultNavbar({ transparent, light, action }) {
           pl={{ xs: 0, lg: 1 }}
         >
           <MDTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
-             MobiShuli 
+          <Box
+            component="img"
+            sx={{
+            height: 100,
+        
+            }}
+            alt="Your logo."
+            src={logo}
+        />
           </MDTypography>
         </MDBox>
         <MDBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
