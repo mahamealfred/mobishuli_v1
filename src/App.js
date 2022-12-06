@@ -8,9 +8,10 @@ import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "./
 import { useState, useEffect, useMemo } from "react";
 
 // react-router components
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, BrowserRouter as Router, } from "react-router-dom";
 // Material Dashboard 2 React components
-import MDBox from "./components/MDBox"
+import MDBox from "./components/MDBox";
+// import Dashboard from './layouts/dashboard';
 function App() {
   const [controller, dispatch] = useMaterialUIController();
   const {
@@ -54,12 +55,14 @@ function App() {
     return (
       <ThemeProvider theme={theme}>
          <CssBaseline />
-      <SignIn/>
+    <Routes>
+      <Route exact path="/" element={ <SignIn/>} />
+      {/* <Route exact path="/services" element={ <Dashboard/>} /> */}
+    </Routes>
       </ThemeProvider>
 
     );
 }
-
 export default App;
 
 // ///////////////////////////////////////////////////////////////////////////////////////
