@@ -19,7 +19,7 @@ function Footer({ light }) {
   const { size } = typography;
 
   return (
-    <MDBox position="relative" width="100%" bottom={0} py={4}>
+    <MDBox position={{xs:"relative",md:"absolute"}} width="100%" bottom={0} py={4}>
       <Container>
         <MDBox
           width="100%"
@@ -101,7 +101,6 @@ function Footer({ light }) {
                 </MDTypography>
               </Link>
             </MDBox>
-           
           </MDBox>
         </MDBox>
       </Container>
