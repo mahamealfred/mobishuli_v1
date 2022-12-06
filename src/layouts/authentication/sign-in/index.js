@@ -41,7 +41,7 @@ function Basic() {
           coloredShadow="info"
           mx={2}
           mt={-3}
-          p={2}
+          p={1}
           mb={1}
           textAlign="center"
         >
